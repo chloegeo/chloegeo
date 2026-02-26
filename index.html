@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chloe Thalia Georgiou</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/aaaakshat/cm-web-fonts@latest/fonts.css">
+    <style>
+        :root {
+            --text: #333;
+            --text-light: #555;
+            --accent: #1a5276;
+            --link: #1a5276;
+            --link-hover: #2980b9;
+            --bg: #fff;
+            --border: #ccc;
+            --tag-bg: #eef3f7;
+            --tag-text: #1a5276;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Computer Modern Serif", "Latin Modern Roman", "CMU Serif", Georgia, serif;
+            font-size: 16px;
+            line-height: 1.65;
+            color: var(--text);
+            background: var(--bg);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ── Layout ── */
+        .container {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 50px 24px 60px;
+        }
+
+        /* ── Header ── */
+        header {
+            margin-bottom: 8px;
+        }
+
+        header h1 {
+            font-family: "Computer Modern Serif", Georgia, serif;
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            margin-bottom: 2px;
+        }
+
+        header .subtitle {
+            font-size: 16px;
+            color: var(--text-light);
+            margin-bottom: 0;
+        }
+
+        /* ── Horizontal rule ── */
+        hr {
+            border: none;
+            border-top: 1px solid var(--border);
+            margin: 22px 0;
+        }
+
+        /* ── Two-column top section ── */
+        .top-section {
+            display: flex;
+            gap: 36px;
+            align-items: flex-start;
+        }
+
+        .top-section .about {
+            flex: 1;
+        }
+
+        .top-section .contact-box {
+            flex-shrink: 0;
+            width: 220px;
+            font-size: 14.5px;
+            line-height: 1.6;
+        }
+
+        .contact-box h3 {
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .contact-box ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .contact-box ul li {
+            margin-bottom: 4px;
+        }
+
+        .contact-box ul li a {
+            color: var(--link);
+            text-decoration: none;
+        }
+
+        .contact-box ul li a:hover {
+            color: var(--link-hover);
+            text-decoration: underline;
+        }
+
+        .contact-icon {
+            display: inline-block;
+            width: 16px;
+            text-align: center;
+            margin-right: 4px;
+            font-style: normal;
+        }
+
+        /* ── About ── */
+        .about p {
+            margin-bottom: 10px;
+        }
+
+        /* ── Section headings ── */
+        h2 {
+            font-family: "Computer Modern Serif", Georgia, serif;
+            font-size: 21px;
+            font-weight: 700;
+            margin-bottom: 14px;
+            letter-spacing: -0.2px;
+        }
+
+        /* ── Links ── */
+        a {
+            color: var(--link);
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: var(--link-hover);
+            text-decoration: underline;
+        }
+
+        /* ── Publications ── */
+        .pub-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .pub-list > li {
+            margin-bottom: 18px;
+            padding-left: 0;
+        }
+
+        .pub-title {
+            font-weight: 700;
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .pub-authors {
+            display: block;
+            font-size: 14.5px;
+            color: var(--text-light);
+            margin-bottom: 2px;
+        }
+
+        .pub-authors .me {
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        .pub-venue {
+            font-size: 14.5px;
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        .pub-tags {
+            margin-top: 4px;
+        }
+
+        .pub-tag {
+            display: inline-block;
+            font-size: 12.5px;
+            padding: 1px 8px;
+            border-radius: 3px;
+            background: var(--tag-bg);
+            color: var(--tag-text);
+            margin-right: 4px;
+            font-family: "Computer Modern Sans", "Latin Modern Sans", sans-serif;
+        }
+
+        .pub-tag.status-accepted {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .pub-tag.status-wip {
+            background: #fff8e1;
+            color: #f57f17;
+        }
+
+        /* ── Experience / Awards ── */
+        .entry {
+            margin-bottom: 16px;
+        }
+
+        .entry-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+        }
+
+        .entry-title {
+            font-weight: 700;
+        }
+
+        .entry-date {
+            font-size: 14px;
+            color: var(--text-light);
+            font-style: italic;
+            white-space: nowrap;
+        }
+
+        .entry-org {
+            font-size: 14.5px;
+            color: var(--text-light);
+        }
+
+        .entry-detail {
+            font-size: 15px;
+            margin-top: 3px;
+        }
+
+        /* ── Skills tags ── */
+        .skills-row {
+            margin-bottom: 8px;
+        }
+
+        .skills-row strong {
+            font-size: 14.5px;
+        }
+
+        .skill-tag {
+            display: inline-block;
+            font-size: 13px;
+            padding: 1px 8px;
+            border-radius: 3px;
+            background: #f3f3f3;
+            color: var(--text);
+            margin: 2px 3px 2px 0;
+            font-family: "Computer Modern Typewriter", "Latin Modern Mono", monospace;
+        }
+
+        /* ── Footer ── */
+        footer {
+            margin-top: 10px;
+            padding-top: 14px;
+            border-top: 1px solid var(--border);
+            font-size: 13px;
+            color: #999;
+            text-align: center;
+        }
+
+        footer a {
+            color: #999;
+        }
+
+        footer a:hover {
+            color: var(--link-hover);
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 640px) {
+            .top-section {
+                flex-direction: column-reverse;
+                gap: 16px;
+            }
+            .top-section .contact-box {
+                width: 100%;
+            }
+            .entry-header {
+                flex-direction: column;
+            }
+            header h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <!-- Header -->
+        <header>
+            <h1>Chloe Thalia Georgiou</h1>
+            <div class="subtitle">PhD Student in Computer Science &mdash; University of California, Irvine</div>
+        </header>
+
+        <hr>
+
+        <!-- Top: About + Contact -->
+        <div class="top-section">
+            <div class="about">
+                <p>
+                    I am a PhD student in Computer Science at <a href="https://www.uci.edu/">UC Irvine</a>, advised by
+                    <a href="https://www.ics.uci.edu/~gts/">Prof. Gene Tsudik</a>.
+                    My research interests span <strong>security &amp; privacy</strong>&mdash;including LLM security, NLP, network analysis, empirical privacy measurements, and applied cryptography for data rights.
+                </p>
+                <p>
+                    I received my B.S. in Computer Science from <a href="https://www.ucr.edu/">UC Riverside</a> in 2024 (GPA 3.90, top 4% of class), where I was a
+                    <a href="#">Chancellor&rsquo;s Research Fellow</a> working on graph algorithms with Prof. Marek Chrobak.
+                </p>
+                <p>
+                    I am a U.S. Citizen.
+                </p>
+            </div>
+
+            <div class="contact-box">
+                <h3>Contact</h3>
+                <ul>
+                    <li><span class="contact-icon">&#9993;</span> <a href="mailto:chloegeorgiou8@gmail.com">chloegeorgiou8@gmail.com</a></li>
+                    <li><span class="contact-icon">&#9742;</span> 909-714-6290</li>
+                    <li><span class="contact-icon">&#128279;</span> <a href="https://linkedin.com/in/chloegeorgiou">LinkedIn</a></li>
+                    <li><span class="contact-icon">&#128187;</span> <a href="https://github.com/chloegeo">GitHub</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- Publications -->
+        <h2>Publications</h2>
+        <ul class="pub-list">
+            <li>
+                <span class="pub-title">Consumer Beware! Exploring Data Brokers&rsquo; CCPA Compliance</span>
+                <span class="pub-authors">Elina Van Kempen, Isita Bagayatkar, Pavel Frolikov, <span class="me">Chloe Georgiou</span>, Gene Tsudik</span>
+                <span class="pub-venue">IEEE Symposium on Security &amp; Privacy (S&amp;P), 2026.</span>
+                <div class="pub-tags"><span class="pub-tag status-accepted">Accepted</span></div>
+            </li>
+            <li>
+                <span class="pub-title">Unsafe by Design? Detecting Privacy and Security Flaws in Therapy Apps Through Static Analysis, NLP, and LLMs</span>
+                <span class="pub-authors"><span class="me">Chloe Georgiou</span>, Emiliano De Cristofaro, Gene Tsudik</span>
+                <span class="pub-venue">In preparation, 2025.</span>
+                <div class="pub-tags"><span class="pub-tag status-wip">In the works</span></div>
+            </li>
+            <li>
+                <span class="pub-title">Intermediary-Assisted Private Identity Verification with Proxy Re-Encryption</span>
+                <span class="pub-authors">Elina Van Kempen, <span class="me">Chloe Georgiou</span>, Pavel Frolikov, Gene Tsudik</span>
+                <span class="pub-venue">In preparation, 2025.</span>
+                <div class="pub-tags"><span class="pub-tag status-wip">In the works</span></div>
+            </li>
+            <li>
+                <span class="pub-title">On HTLC-Based Protocols for Multi-Party Cross-Chain Swaps</span>
+                <span class="pub-authors">Emily Clark, <span class="me">Chloe Georgiou</span>, Katelyn Poon, Marek Chrobak</span>
+                <span class="pub-venue">November 2024.</span>
+            </li>
+        </ul>
+
+        <hr>
+
+        <!-- Research Experience -->
+        <h2>Research Experience</h2>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-title">Graduate Researcher &mdash; UC Irvine</span>
+                <span class="entry-date">Sep 2024 &ndash; Present</span>
+            </div>
+            <span class="entry-org">Advisor: Prof. Gene Tsudik</span>
+            <p class="entry-detail">Research in LLM security, NLP-based privacy analysis, empirical privacy measurements, and applied cryptography for data rights.</p>
+        </div>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-title">Chancellor&rsquo;s Research Fellow &mdash; UC Riverside</span>
+                <span class="entry-date">Jun 2023 &ndash; Jun 2024</span>
+            </div>
+            <span class="entry-org">Advisor: Prof. Marek Chrobak</span>
+            <p class="entry-detail">Selected 1 of 13 fellows university-wide. Developed &ldquo;An Algorithm for Recognizing Bottleneck Graphs.&rdquo;</p>
+        </div>
+
+        <hr>
+
+        <!-- Technical Skills -->
+        <h2>Technical Skills</h2>
+        <div class="skills-row">
+            <strong>Languages:</strong>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">C++</span>
+            <span class="skill-tag">Bash</span>
+            <span class="skill-tag">LaTeX</span>
+        </div>
+        <div class="skills-row">
+            <strong>Security/Networking:</strong>
+            <span class="skill-tag">Wireshark</span>
+            <span class="skill-tag">gdb</span>
+            <span class="skill-tag">IDA Pro</span>
+        </div>
+        <div class="skills-row">
+            <strong>Crypto Tooling:</strong>
+            <span class="skill-tag">PyOpenSSL</span>
+            <span class="skill-tag">Charm-Crypto</span>
+        </div>
+        <div class="skills-row">
+            <strong>Platforms/ML:</strong>
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">Docker</span>
+            <span class="skill-tag">AWS</span>
+            <span class="skill-tag">Linux</span>
+            <span class="skill-tag">PyTorch</span>
+            <span class="skill-tag">TensorFlow</span>
+        </div>
+
+        <hr>
+
+        <!-- Awards -->
+        <h2>Awards &amp; Honors</h2>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-title">ArrowHeart Scholarship</span>
+                <span class="entry-date">Feb 2024</span>
+            </div>
+            <span class="entry-org">Arrowhead Credit Union &mdash; Awarded for academic excellence and community service.</span>
+        </div>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-title">Thomas H. Payne Scholarship</span>
+                <span class="entry-date">Jan 2022</span>
+            </div>
+            <span class="entry-org">UC Riverside &mdash; Recognized among top CS/CSE undergraduates; featured in UCR press release.</span>
+        </div>
+
+        <hr>
+
+        <!-- Leadership -->
+        <h2>Leadership &amp; Service</h2>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-title">Guest Lecturer, CS 142 &mdash; UC Riverside</span>
+                <span class="entry-date">Apr 2023</span>
+            </div>
+            <p class="entry-detail">Delivered a 60-minute seminar on blockchain algorithms to 40+ undergraduates.</p>
+        </div>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-title">President, Tau Beta Pi @ UCR</span>
+                <span class="entry-date">Jun 2023 &ndash; Jun 2024</span>
+            </div>
+            <p class="entry-detail">Managed a $10K+ budget; organized 5+ technical speaker events (100+ attendees each).</p>
+        </div>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-title">Chair, IEEE @ UCR</span>
+                <span class="entry-date">Oct 2022 &ndash; Mar 2023</span>
+            </div>
+            <p class="entry-detail">Led a 13-member exec team; ran coding workshops for 100+ students.</p>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            Last updated: February 2026 &nbsp;&bull;&nbsp; Font: <a href="https://en.wikipedia.org/wiki/Computer_Modern">Computer Modern</a>
+        </footer>
+
+    </div>
+</body>
+</html>
